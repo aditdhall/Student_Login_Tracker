@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+<head>
+	<title>Professor Home</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <script src="/assets/js/professorLoginRedirect.js"></script>
+    <script src="/assets/js/logout.js"></script>
+    <script src="/assets/js/setUsername.js"></script>
+</head>
+<body class="h-full">
+    <div class="flex flex-row h-full z-10">
+        <div class="bg-brick-orange text-center w-60 text-white fixed left-0 h-full z-10 drop-shadow-lg">
+            <ul class="p-0 text-center list-none">
+                <li>
+                    <h2 class="text-3xl py-2">Professor</h2>
+                </li>
+                <hr>
+                <li>
+                    <h2 class="text-3xl py-2" id="username">Professor</h2>
+                </li>
+                <hr>
+                <li><a class="block text-white pb-2 pl-4 pr-4 pt-2 no-underline hover:bg-black transition duration-200" href="/dashboards/professor.html">Home</a></li><!--KEEP THIS ONE REPLACE THE OTHERS-->
+                <hr>
+                <li><a class="block text-white pb-2 pl-4 pr-4 pt-2 no-underline hover:bg-black transition duration-200" href="../../dashboards/notifications.html">Notifications</a></li>
+                <hr>
+                <li><a class="block text-white pb-2 pl-4 pr-4 pt-2 no-underline hover:bg-black transition duration-200" id="logout" href="/dashboards/professor.html">Logout</a></li>
+                <hr>
+            </ul>
+        
+            <div class="absolute bottom-0 w-full h-auto">
+                <a class="w-full h-auto" href="https://www.rit.edu" target="_blank">
+                    <img class="bg-black z-10 w-full h-auto px-2 py-10" src="/assets/img/rit_words_logo2.png">
+                </a>
+            </div>
+        </div>
+        <div class="ml-60 w-full h-full last:mb-10">

@@ -1,0 +1,75 @@
+services:
+  frontend:
+    container_name: frontend
+    image: studentlogintracker/studentlogintracker-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    # MAKE SURE TO ADJUST THESE TO THE IP ADDRESS OR HOSTNAME OF THE SERVER HOSTING THIS STACK
+    environment:
+      - FRONTEND_HOST=slt.markode.xyz
+      - BACKEND_HOST=slt.markode.xyz:8079
+  backend:
+    container_name: backend
+    image: studentlogintracker/studentlogintracker-backend
+    restart: unless-stopped
+    ports:
+      - "8079:80"
+    # MAKE SURE TO ADJUST FRONTEND_HOST TO THE IP ADDRESS OR HOSTNAME OF THE SERVER HOSTING THIS STACK
+    # DB variables should reflect information set for mysql environment variables
+    environment:
+      - FRONTEND_HOST=slt.markode.xyz
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=iste501team
+      - DB_DATABASE=StudentLoginTracker
+  parser:
+    container_name: parser
+    image: studentlogintracker/studentlogintracker-parser
+    restart: unless-stopped
+    # Be sure to create a folder named "log" in the same directory as this docker-compose.yml
+    volumes:
+      - /var/log:/log
+    privileged: true
+    # DB variables should reflect information set for mysql environment variables
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=iste501team
+      - DB_DATABASE=StudentLoginTracker
+  assignmentChecker:
+    container_name: assignment_checker
+    image: studentlogintracker/studentlogintracker-assignment-checker
+    restart: unless-stopped
+    environment:
+      - SOLACE_IP=54.156.59.122
+        #  rsyslog:
+        #    container_name: rsyslog
+        #    image: rsyslog/syslog_appliance_alpine
+        #    privileged: true
+        #    ports:
+        #      - "514:514"
+        #    volumes:
+        #      - ./log:/var/log
+        #      - ./rsyslog.conf:/etc/rsyslog.conf
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+  db:
+    container_name: mysql
+    image: mysql:latest
+    restart: unless-stopped
+    ports:
+      - "8081:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=iste501team
+      - MYSQL_DATABASE=StudentLoginTracker
+    # Be sure to place 00-schema.sql in a folder titled "db" in the same directory as this docker-compose.yml
+    volumes:
+      - ./db/00-schema.sql:/docker-entrypoint-initdb.d/00-schema.sql
+      - ./db/01-prodData.sql:/docker-entrypoint-initdb.d/01-prodData.sql
+      - ./db/data:/var/lib/mysql

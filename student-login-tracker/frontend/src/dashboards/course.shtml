@@ -1,0 +1,42 @@
+<!-- 
+author: Ethan Marschean.
+purpose: ISTE-501 course view HTML page.
+produced on: 10/2/2022.
+-->
+
+<!--#include virtual="../assets/inc/professor-header.html" -->
+
+<!-- THIS SCRIPT TAG IS IN-PROGRESS-->
+<script src="../assets/js/csvIngestor.js"></script>
+<script src="../assets/js/course.js"></script>
+
+<img class="background" src="../assets/img/profBackground.jpg" width="100%" height="100%">
+
+<div class="flex flex-col ml-5">
+  <h1 class="text-4xl text-center mt-5 text-brick-orange" id="bigHead"></h1> <!--BIG HEAD IS THE DYNAMICALLY ASSIGNED HEADER-->
+  <div class="flex flex-row mt-10 mr-2 items-start">
+    <div class="table w-full block p-4 no-underline bg-white mb-4 mr-4 rounded-lg text-center max-h-min border-2 border-brick-orange drop-shadow-lg">
+      <div id="users"></div>
+    </div>
+    <!--1ST GRAPH BOX ON RIGHT HAND SIDE OF PAGE-->
+    <ul class="max-w-sm block p-4 no-underline bg-white mb-4 rounded-lg text-center mr-20 border-2 border-brick-orange drop-shadow-lg">
+      <li><canvas id="myChart" width="300" height="300"></canvas></li>
+      <li id="successPercentLi"></li>
+      <li id="failPercentLi"></li>
+    </ul>
+    <!--2ND GRAPH BOX ON RIGHT HAND SIDE OF PAGE-->
+    <ul class="max-w-sm block p-4 no-underline bg-white mb-4 rounded-lg text-center mr-20 border-2 border-brick-orange drop-shadow-lg">
+      <li><canvas id="secondChart" width="300" height="300"></canvas></li>
+      <li id="secondsuccessPercentLi"></li>
+      <li id="secondfailPercentLi"></li>
+    </ul>
+  </div>
+  <div class="flex flex-col grow mr-20">
+    <button class="self-start bg-white px-6 py-3 mb-4 rounded border-2 border-brick-orange hover:bg-rit-gray transition duration-200 drop-shadow-lg" onclick="newAssignment(event)" id="newAssignment">New Assignment</button>
+    <ul class="p-0 text-black list-none" id="assignments">
+    </ul>
+  </div>
+</div>
+
+
+<!--#include virtual="../assets/inc/footer.html" -->

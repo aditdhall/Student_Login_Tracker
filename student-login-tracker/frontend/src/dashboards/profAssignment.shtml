@@ -1,0 +1,28 @@
+<!--#include virtual="../assets/inc/professor-header.html" -->
+
+<script src="../assets/js/profAssignment.js"></script>
+
+<img class="background" src="../assets/img/profBackground.jpg" width="100%" height="100%">
+
+<div class="flex flex-col ml-5 mt-10 grow">
+    <h1 id="header" class="text-4xl text-center text-brick-orange mb-4"></h1>
+    <div class="flex flex-row content-center justify-center flex-wrap mr-20">
+        <!-- Polar Area Chart showing file sizes -->
+        <div class="bg-white rounded-lg border-2 border-brick-orange p-5 drop-shadow-lg m-10">
+            <h4 class="text-lg">File Size</h4>
+            <canvas id="paChart1" width="300" height="300"></canvas>
+        </div>
+        <!-- Polar Area Chart showing line counts -->
+        <div class="bg-white rounded-lg border-2 border-brick-orange p-5 drop-shadow-lg m-10">
+            <h4 class="text-lg">Line Count</h4>
+            <canvas id="paChart2" width="300" height="300"></canvas>
+        </div>
+        <!-- Scatter Chart with 2 datapoints - date submitted and relative score against other submissions for line count and file size (lineCount/(mean line count) + fileSize/(mean file size)) / 2  -->
+        <div class="bg-white rounded-lg border-2 border-brick-orange p-5 drop-shadow-lg m-10">
+            <h4 class="text-lg">Submission Time vs Relative Metric Score</h4>
+            <canvas id="scatterChart" width="300" height="300"></canvas>
+        </div>
+    </div>
+</div>
+
+<!--#include virtual="../assets/inc/footer.html" -->

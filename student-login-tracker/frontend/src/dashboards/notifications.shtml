@@ -1,0 +1,25 @@
+<!-- 
+author: Tariq Afoke.
+purpose: ISTE-501 notifications view HTML page.
+produced on: 10/14/2022.
+-->
+
+<!--#include virtual="../assets/inc/professor-header.html" -->
+
+<script src="../assets/js/notifications.js"></script>
+
+<img class="background" src="../assets/img/profBackground.jpg" width="100%" height="100%">
+
+<div class="flex flex-col absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div class="p-4 no-underline bg-white mb-4 mx-auto rounded-lg text-center max-w-4xl border-2 border-brick-orange drop-shadow-lg">
+          <h1 class="text-2xl">Notifications</h1>
+          <div id="notifyList"></div>
+        </div>
+
+        <div class="p-4 no-underline bg-white mb-4 mx-auto rounded-lg text-center max-w-3xl border-2 border-brick-orange drop-shadow-lg">
+          <h1 class="text-2xl">List of Students Who Haven't Logged In</h1>
+          <div id="notifyList2"></div>
+        </div>
+</div>
+
+<!--#include virtual="../assets/inc/footer.html" -->

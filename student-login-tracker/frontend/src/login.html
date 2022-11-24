@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="h-full">
+    <head>
+        <title>Student Login Tracker: Login</title>
+        <link rel="stylesheet" href="assets/css/tailwind.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <script src="https://accounts.google.com/gsi/client"></script>
+        <script type="text/javascript" src="assets/js/login.js"></script>
+    </head>
+    <body class="h-full">
+        <img class="background" src="../assets/img/loginBackground.jpg" width="100%" height="100%">
+
+        <div class="bg-brick-orange text-black pt-3 pb-2 drop-shadow-lg" style="font-family:'HelveticaNeue-Light'">
+            <div class="flex">
+                <div class="w-1/5 pl-4 h-auto flex-none"><img src="../assets/img/rit_logo.png" width="150px" height="150px"></div>
+                <div class="w-3/5 h-auto text-center flex-auto"><h1 class="text-5xl" >Welcome to the RIT IST Student Login Tracking Application</h1></div>
+                <div class="w-1/5 h-auto flex-none"></div> <!--just to take up space smh my head-->
+            </div>
+            <div class="flex">
+                <div class="w-1/5 h-auto flex-none"></div> <!--just to take up space smh my head-->
+                <div class="w-3/5 h-auto flex-auto"><h3 class="text-3xl text-center">Project <b>Double Check</b>: By Team 3</h3></div>
+                <div class="w-1/5 h-auto flex-none"></div> <!--just to take up space smh my head-->
+            </div>
+        </div>
+        <button class="flex flex-row bg-white border-2 border-brick-orange hover:bg-rit-gray rounded absolute bottom-20 left-1/2 -translate-x-2/3 mx-auto transition duration-200" onclick="client.requestCode();">
+            <p class="p-4">Sign in with Google</p>
+            <img class="pr-4 self-center" height="45" width="45" src="/assets/img/googlelogo.png">
+        </button>
+    </body>
+</html>

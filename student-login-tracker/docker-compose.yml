@@ -1,0 +1,24 @@
+services:
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    ports:
+      - "80:80"
+    environment:
+      - FRONTEND_HOST=localhost
+      - BACKEND_HOST=localhost:8079
+  backend:
+    container_name: backend
+    build: ./backend
+    ports:
+      - "8079:80"
+  db:
+    container_name: mysql
+    image: mysql:latest
+    ports:
+      - "8081:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=iste501team
+      - MYSQL_DATABASE=StudentLoginTracker
+    volumes:
+      - ./db/00-schema.sql:/docker-entrypoint-initdb.d/00-schema.sql

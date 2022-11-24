@@ -1,0 +1,24 @@
+CREATE DATABASE ISTE501;
+
+
+CREATE TABLE user (
+Id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Username varchar(255) UNIQUE
+);
+
+
+CREATE TABLE student (
+Id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Flag boolean DEFAULT(0),
+FORGEIGN KEY (Id) REFRENCES user(Id)
+);
+
+CREATE TABLE LoginAttempt (
+Id int AUTO_INCREMENT PRIMARY KEY,
+UserId int,
+Time datetime,
+Success boolean,
+FOREIGN KEY (UserId) REFRENCES student(Id)
+);
+
+ALTER TABLE LoginAttempt MODIFY Time time;

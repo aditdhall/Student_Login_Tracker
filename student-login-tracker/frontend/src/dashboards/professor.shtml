@@ -1,0 +1,30 @@
+<!-- 
+author: Ethan Marschean.
+purpose: ISTE-501 professor view HTML page.
+produced on: 10/2/2022.
+-->
+
+<!--#include virtual="../assets/inc/professor-header.html" -->
+
+<script src="../assets/js/professor.js"></script>
+
+<img class="background" src="../assets/img/profBackground.jpg" width="100%" height="100%">
+
+<div class="flex flex-col ml-5 mt-8 grow">
+ <!-- <div class="w-full h-full" 
+  </div> style="background-image:('../assets/img/profBackground.jpg');"></div> -->
+    <div class="text-black text-center ml-20">
+    
+
+        <!--TOP CENTER OF PAGE, HORIZ BAR WITH SEMESTERS LIST-->
+        <ul class="list-none m-0 p-0 truncate" id="semesters">
+        </ul>
+    </div>
+    <!--CLASS LIST IN CENTER OF PAGE -->
+    <div class="text-black grow mr-20">
+        <ul class="p-0 list-none" id="courses">
+        </ul>
+    </div>
+</div>
+
+<!--#include virtual="../assets/inc/footer.html" -->

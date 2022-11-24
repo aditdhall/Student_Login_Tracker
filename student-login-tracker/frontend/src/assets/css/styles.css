@@ -1,0 +1,28 @@
+html {
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", "sans‑serif";
+}
+
+#tabs .ui-state-active {
+    background: #f76902 !important;
+    border-color: #a2aaad !important;
+}
+
+.ui-tabs .ui-tabs-nav {
+    background: white !important;
+    border: none !important;
+}
+
+/* #tabs {
+    padding: 0px !important;
+} */
+
+.ui-tabs-panel {
+    border-top: 1px solid #a2aaad !important;
+    /* padding: 0px !important; */
+}
+
+.background {
+    opacity: 0.50;
+    z-index: -1;
+    position: fixed;
+}

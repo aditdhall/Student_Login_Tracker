@@ -1,0 +1,19 @@
+<!--#include virtual="../assets/inc/sysadmin-header.html" -->
+
+<script src="/assets/js/sysAdminCoursesStudent.js"></script>
+
+<img class="background" src="../assets/img/sysAdminBackground.jpg" width="100%" height="100%">
+
+<div class="w-full">
+    <div class="flex flex-col h-full m-20 grow">
+        <div class="grid grid-cols-2 gap-4 bg-white p-4 rounded-lg mb-4 border-2 border-brick-orange drop-shadow-lg">
+            <div class="text-3xl my-auto" id="courseName"></div>
+            <div class="justify-self-end px-6 py-3 border-2 border-brick-orange rounded hover:bg-rit-gray transition duration-200" id="addStudent">Add a New Student</div>
+        </div>
+        <div class="flex flex-col" id="students">
+
+        </div>
+    </div>
+</div>
+
+<!--#include virtual="../assets/inc/footer.html" -->

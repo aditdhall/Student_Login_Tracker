@@ -14,4 +14,5 @@ The project server will retrieve data from the database to analyze the user's lo
 RIT Students and Faculties will have to use their RIT accounts to access the web-based management site.
 
 #Credits:
+
   Adit Dhall, Ethan Marschean, Tariq Afoke, Eli Hopkins, Essence Hagan, Matthew Russell, Songyuan Bo, Samuel Crouch
